@@ -30,7 +30,23 @@ class ViewController: UIViewController {
     }
     
     @objc func loadData(btn: UIButton) {
-        let _ = demoApiManager.loadData()
+        
+        
+        /// let _ = demoApiManager.loadData()
+        
+        /// 并发
+        let queue = DispatchQueue(label: "com.hi.net", attributes: .concurrent)
+    
+        queue.async {
+            let _ = self.demoApiManager.loadData()
+
+        }
+        
+        queue.async {
+            let _ = self.demoApiManager.loadData()
+
+        }
+        
     }
 }
 

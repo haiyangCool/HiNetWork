@@ -7,7 +7,7 @@
 //
 
 import Foundation
-//import Reachability
+import Reachability
 
 public class HiNetReachability: NSObject {
     
@@ -17,16 +17,16 @@ public class HiNetReachability: NSObject {
     /// 网络是否可用
     func isReachable() -> Bool {
         
-//        let reachability = try? Reachability()
-//
-//        if let connection = reachability?.connection {
-//            switch connection {
-//            case .unavailable:
-//                return false
-//            default:
-//                return true
-//            }
-//        }
+        let reachability = try? Reachability()
+
+        if let connection = reachability?.connection {
+            switch connection {
+            case .unavailable:
+                return false
+            default:
+                return true
+            }
+        }
         
         return true
     }
